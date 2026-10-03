@@ -1,4 +1,4 @@
-Watch me explain this lab: LoomLinkTBA
+Watch me explain this lab: [LoomLink](https://www.loom.com/share/038bef95824041ec9c529ea77eab2842)
 
 # active-directory-azureVM-lab
 
