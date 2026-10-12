@@ -61,6 +61,8 @@ New-ADGroup -Name "Finance_Users" -GroupScope Global -GroupCategory Security -Pa
 New-ADGroup -Name "HR_Users"      -GroupScope Global -GroupCategory Security -Path "OU=HR,DC=lab,DC=local"
 New-ADGroup -Name "Sales_Users"   -GroupScope Global -GroupCategory Security -Path "OU=Sales,DC=lab,DC=local"
 ```
+<img width="565" height="412" alt="ADLabOUs" src="https://github.com/user-attachments/assets/36fac78f-5156-4bc9-9710-196bba1fdca8" />
+
 
 ### 5. Provisioned users and group memberships
 One user per department using the `firstname.lastname` convention, each added to their department group (run as a single block so `$password` is defined first):
@@ -93,6 +95,9 @@ Add-ADGroupMember -Identity "Sales_Users"   -Members "david.smith"
 ```
 > `Welcome@2026!` is a throwaway lab password. Never hardcode real credentials in scripts or commit them to a repo.
 
+<img width="740" height="412" alt="ADLabProvisionUsersGPOs" src="https://github.com/user-attachments/assets/67dc60d8-c3f3-4720-8ea9-71a7fd30a632" />
+
+
 ### 6. Enforced security with Group Policy
 Created an **IT Security Policy** GPO, linked it to the IT OU, and configured:
 
@@ -107,6 +112,8 @@ Verified the link with:
 ```powershell
 Get-GPInheritance -Target "OU=IT,DC=lab,DC=local"
 ```
+<img width="651" height="820" alt="ADLabLinkConfigureGPO" src="https://github.com/user-attachments/assets/dba28174-6469-404c-abe6-cdd5a3c877e4" />
+
 
 ### 7. Ran help desk account lifecycle tasks
 The day one ticket work, all scriptable:
